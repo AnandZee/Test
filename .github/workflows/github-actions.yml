@@ -1,5 +1,6 @@
 name: workflow-name
 
+#on: pull_request
 on: [push]
 
 jobs:
@@ -8,8 +9,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+      - uses: actions/checkout@v1
       - name: Build
-        run: swift build
-      - name: Run tests
-        run: swift test
+        run: set -o pipefail && xcodebuild clean -scheme $SCHEME -destination "platform=tvOS Simulator,name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH build-for-testing | xcpretty --color --simple
+      #- name: Run tests
+      #  run: swift test
