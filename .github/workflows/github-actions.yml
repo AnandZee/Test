@@ -1,6 +1,7 @@
-name: Pipeline name
+name: Workflow1
 
-on: pull_request
+#on: pull_request
+on: push
 
 jobs:
   build:
