@@ -12,6 +12,7 @@ jobs:
       - name: Checkout
       - uses: actions/checkout@v1
       - name: Build
-      - run: set -o pipefail && xcodebuild clean -scheme $SCHEME -destination "platform=tvOS Simulator,name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH build-for-testing | xcpretty --color --simple
+      run: |
+        set -o pipefail && xcodebuild clean -scheme $SCHEME -destination "platform=iOS Simulator,name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH build-for-testing | xcpretty --color --simple
       #- name: Run tests
       #  run: swift test
