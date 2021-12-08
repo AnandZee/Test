@@ -87,7 +87,7 @@ jobs:
         gem install bundler
     - name: Setup bundler
       run: |
-        bundle install
+        bundle install --path vendor/bundle
     - name: Danger
       run: |
         bundle exec danger
