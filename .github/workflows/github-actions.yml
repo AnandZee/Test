@@ -82,7 +82,10 @@ jobs:
       uses: actions/download-artifact@v1
       with:
         name: TestLogs
-    - name: Setup bundle
+    - name: Install bundler
+      run: |
+        gem install bundler
+    - name: Setup bundler
       run: |
         bundle install
     - name: Danger
