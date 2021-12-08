@@ -41,7 +41,7 @@ jobs:
         name: Products
     - name: Display structure of downloaded files
       run: ls -R
-    - name: Run unit tests
+    - name: Run unit tests.
       run: |
         set -o pipefail && xcodebuild test-without-building -xctestrun $(find . -type f -name "*.xctestrun") -destination "platform=tvOS Simulator,name=$DEVICE" -derivedDataPath $DERIVED_DATA_PATH -enableCodeCoverage YES -only-testing:$UNIT_TEST_TARGET | xcpretty --color --simple
     - name: Upload test logs
