@@ -24,5 +24,4 @@ class MyTVMLTests: XCTestCase {
         let value = true
         XCTAssert(value)
     }
-
 }
