@@ -1,8 +1,11 @@
 #Referred from https://github.com/ngeri/actions-ios/blob/master/.github/workflows/feature_pipeline.yml
 name: Workflow1
 
-on: pull_request
 #on: push
+on: pull_request
+    branches:
+    - main
+    - develop
 
 jobs:
   build:
