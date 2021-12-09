@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonAction(_ sender: Any) {
-        print("Hi TV")
+        print("Hi TV app")
     }
     
 }
